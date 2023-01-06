@@ -40,7 +40,7 @@ So Canteen Owners are provided with the Default `Admin Panel that is Provided by
 
 ## Demo Of Application
 To Watch the Live Demo Of Application click on the Below Given Link of Twitter Post.
-[Link Will Be Updated Soon]() 🚀.
+[View Demo](https://twitter.com/Chinmay_775/status/1611319988832604160) 🚀.
 
 ### Here Are Some ScreenShots of The Application
 
