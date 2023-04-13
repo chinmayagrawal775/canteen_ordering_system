@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.http import JsonResponse
 from canteen.models import FoodItem
 from .models import Cart, Orders, OrderItems
 from .forms import LoginRegisterForm
@@ -89,19 +90,38 @@ def update_cart(request, f_id):
         cart_item.save()
 
     if('cart' in request.META['HTTP_REFERER']):
-        return HttpResponseRedirect('/cart/')
+        # return HttpResponseRedirect('/cart/')
+        cartitems = Cart.objects.filter(username=request.user)
+        details_of_cart_item = {}
+        total_amount = 0
+        if(cartitems):
+            for item in cartitems:
+                if(item.food == food):
+                    details_of_cart_item[item.food.name] = {
+                        "quantity" : item.quantity,
+                        "amount" : item.food.price * item.quantity
+                    }
+                sub_total = item.food.price * item.quantity
+                total_amount += sub_total
+        data = {
+            'details_of_cart_item':details_of_cart_item,
+            'total_amount':total_amount
+        }
+        return JsonResponse(data)
     else:
         return HttpResponseRedirect('/')
 
 @login_required(login_url='/login/')
 def cart(request):
     cartitems = Cart.objects.filter(username=request.user)
+    total_of_each_item = {}
     total_amount = 0
     if(cartitems):
         for item in cartitems:
+            total_of_each_item[item.food.name] = item.food.price * item.quantity
             sub_total = item.food.price * item.quantity
             total_amount += sub_total
-    return render(request, 'order/cart.html', {'cartitems':cartitems, 'total_amount':total_amount})
+    return render(request, 'order/cart.html', {'cartitems':cartitems, 'total_amount':total_amount, 'total_of_each_item':total_of_each_item})
 
 @login_required(login_url='/login/')
 def checkout(request):
