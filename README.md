@@ -39,8 +39,8 @@ Business-End means the Canteen Owner. As of now there is no seperate application
 So Canteen Owners are provided with the Default `Admin Panel that is Provided by Django`.
 
 ## Demo Of Application
-To Watch the Live Demo Of Application click on the Below Given Link of Twitter Post.
-[View Demo](https://twitter.com/Chinmay_775/status/1611319988832604160) 🚀.
+To Watch the Live Demo Of Application click on the Below Given Link.
+[View Demo](https://www.linkedin.com/posts/chinmayagrawal775_python-developer-project-activity-7052944560292831232-M1jI/) 🚀.
 
 ### Here Are Some ScreenShots of The Application
 
