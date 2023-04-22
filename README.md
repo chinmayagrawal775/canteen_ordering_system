@@ -34,7 +34,7 @@ This Canteen Ordering System is Built Using Django, where students can order the
 End User or Consumer Can Interact with the Application Using the web interface or the frontend of the application. 
 
 ## Business-End Interface
-Business-End means the Canteen Owner. As of now there is no seperate application for Canteen Owner.
+Business-End means the Canteen Owner. As of now there is no separate application for Canteen Owner.
 
 So Canteen Owners are provided with the Default `Admin Panel that is Provided by Django`.
 
