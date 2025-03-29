@@ -69,4 +69,8 @@ If You are Learner, or Want to test this application. Then After Forking & Cloni
 - #### FOR ADMIN:
   - ID : admin
   - PASSWORD : admin
+
+- #### FOR PAYMENT:
+  - ID : payment@admin.com
+  - PASSWORD : payment@admin.com
 ```
